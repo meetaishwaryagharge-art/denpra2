@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Pest Control & Deep Cleaning | Denpra Solutions</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --green:   #2b7a2e;
+      --green-d: #1e5820;
+      --green-l: #4caf50;
+      --lime:    #8bc34a;
+      --yellow:  #f9a825;
+      --dark:    #1a1a1a;
+      --dark2:   #2c2c2c;
+      --gray:    #f5f7f2;
+      --text:    #444;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Nunito Sans', sans-serif; color: var(--text); overflow-x: hidden; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Barlow Condensed', sans-serif; color: var(--dark); }
+    a { text-decoration: none; }
+    
+    .btn-main {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .5px;
+      transition: background .25s, transform .2s;
+    }
+    .btn-main:hover { background: var(--green-d); color: #fff; transform: translateY(-2px); }
+    
+    .btn-outline-main {
+      border: 2px solid var(--green);
+      color: var(--green);
+      padding: 10px 26px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: .95rem;
+      transition: all .25s;
+    }
+    .btn-outline-main:hover { background: var(--green); color: #fff; }
+    
+    .section-tag {
+      display: inline-block;
+      background: rgba(43,122,46,.12);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .section-title { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.1; }
+    .divider-green { width: 50px; height: 4px; background: var(--green); border-radius: 4px; margin: 10px 0 20px; }
+
+    /* ========== TOP BAR ========== */
+    .topbar { background: var(--dark); color: #ccc; font-size: .82rem; padding: 7px 0; }
+    .topbar a { color: #ccc; }
+    .topbar a:hover { color: var(--lime); }
+    .topbar .social a { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.1); color: #fff; font-size: .8rem; transition: background .2s; }
+    .topbar .social a:hover { background: var(--green); }
+
+    /* ========== NAVBAR ========== */
+    .navbar { background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.08); padding: 0; position: sticky; top: 0; z-index: 999; }
+    .navbar-brand img { height: 48px; }
+    .navbar-brand .brand-text { font-family: 'Barlow Condensed', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--green); line-height: 1; }
+    .navbar-brand .brand-text span { color: var(--yellow); }
+    .navbar-nav .nav-link { font-weight: 700; font-size: .92rem; color: var(--dark); padding: 1.1rem 1rem !important; letter-spacing: .3px; position: relative; }
+    .navbar-nav .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; right: 50%; height: 3px; background: var(--green); transition: left .25s, right .25s; }
+    .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { left: 0; right: 0; }
+    .navbar-nav .nav-link:hover { color: var(--green); }
+    .nav-cta { padding: .5rem 1rem !important; margin-left: .5rem; }
+    .nav-cta::after { display: none !important; }
+
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+        .dropdown-menu {
+            min-width: 250px;
+            transition: all 0.3s ease;
+        }
+        .dropdown-item:hover {
+            background: #ecfdf5;
+            color: #10b981;
+            padding-left: 24px;
+        }
+    }
+
+    /* ========== INNER PAGE HERO BANNER ========== */
+    .page-header {
+      background: linear-gradient(100deg, #0d2e0e 0%, #1e5820 100%);
+      position: relative;
+      padding: 90px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&auto=format&fit=crop&q=60') center/cover no-repeat;
+      opacity: .08;
+    }
+    .page-header h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: #fff; margin: 0; }
+    .breadcrumb-wrap { font-size: .9rem; margin-top: 12px; font-weight: 600; }
+    .breadcrumb-wrap a { color: var(--lime); }
+    .breadcrumb-wrap span { color: rgba(255,255,255,.6); }
+
+    /* ========== CONTACT MAIN CONTENT ========== */
+    .contact-page-wrap { padding: 90px 0; background: var(--gray); }
+    
+    .contact-info-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px;
+      border: 1px solid #eaeaea;
+      height: 100%;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .contact-info-card:hover {
+      box-shadow: 0 12px 40px rgba(43,122,46,.1);
+      transform: translateY(-4px);
+    }
+    .contact-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: rgba(43,122,46,.1);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .contact-info-card h5 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+    .contact-info-card p, .contact-info-card a { font-size: 0.92rem; color: #666; margin: 0; }
+    .contact-info-card a:hover { color: var(--green); }
+
+    .form-container {
+      background: #fff;
+      padding: 45px;
+      border-radius: 16px;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 10px 40px rgba(0,0,0,.04);
+    }
+    .form-control, .form-select {
+      border: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      background-color: #f8fafc;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(43,122,46,.15);
+      background-color: #fff;
+    }
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #64748b;
+      margin-bottom: 6px;
+    }
+
+    /* ========== MAP LAYER ========== */
+    .map-container {
+      width: 100%;
+      height: 450px;
+      border: none;
+      margin-bottom: -6px;
+      display: block;
+    }
+
+    /* ========== FOOTER ========== */
+    footer { background: var(--dark2); color: #ccc; }
+    .footer-top { padding: 80px 0 50px; }
+    .footer-brand .brand-text { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; }
+    .footer-brand .brand-text span { color: var(--lime); }
+    .footer-brand p { font-size: .88rem; line-height: 1.75; margin: 14px 0 20px; color: #aaa; }
+    .footer-socials a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.08); color: #ccc; display: inline-flex; align-items: center; justify-content: center; font-size: .9rem; transition: background .2s; margin-right: 6px; }
+    .footer-socials a:hover { background: var(--green); color: #fff; }
+    footer h6 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 18px; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 9px; }
+    .footer-links a { color: #aaa; font-size: .88rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--lime); padding-left: 4px; }
+    .footer-contact li { display: flex; gap: 10px; font-size: .88rem; color: #aaa; margin-bottom: 12px; }
+    .footer-contact li i { color: var(--lime); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .footer-bottom { background: #222; padding: 16px 0; font-size: .82rem; color: #888; }
+
+    /* ========== BACK TO TOP ========== */
+    #backToTop { position: fixed; bottom: 28px; right: 28px; width: 42px; height: 42px; background: var(--green); color: #fff; border-radius: 50%; border: none; display: none; align-items: center; justify-content: center; font-size: 1.1rem; z-index: 999; box-shadow: 0 6px 20px rgba(43,122,46,.4); transition: background .25s; }
+    #backToTop:hover { background: var(--green-d); }
+    #backToTop.show { display: flex; }
+  </style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <div class="d-flex align-items-center gap-3 flex-wrap">
+      <span><i class="bi bi-envelope me-1"></i>ISO Certified Pest Control Treatment Pro</span>
+      <span class="d-none d-md-inline">|</span>
+      <span class="d-none d-md-inline"><i class="bi bi-geo-alt me-1"></i> Mumbai | Navi-Mumbai | Thane</span>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span class="d-none d-md-inline me-2"><i class="bi bi-clock me-1"></i> Mon–Sat: 8:00 AM – 7:00 PM</span>
+      <div class="social">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="Denpra_Logo_Crop.png" alt="Maxcare Solutions Logo" class="h-14 w-auto">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+        </li>
+        <!-- Services Dropdown -->
+        <li class="nav-item dropdown position-relative">
+            <a class="nav-link dropdown-toggle" href="service.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Our Services
+            </a>
+            <ul class="dropdown-menu shadow border-0 rounded-3">
+                <li>
+                    <a class="dropdown-item py-2" href="service.html#pest-control-section">
+                        <i class="fas fa-shield-virus me-2 text-success"></i> Pest Control
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item py-2" href="service.html#cleaning-section">
+                        <i class="fas fa-broom me-2 text-success"></i> Cleaning Services
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item py-2" href="service.html#bird-protection-section">
+                        <i class="fas fa-dove me-2 text-success"></i> Bird Protection
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contact</a>
+        </li>
+      </ul>
+      <div class="d-flex gap-2 align-items-center">
+        <a href="tel:+919923553235" class="d-flex align-items-center gap-2 text-decoration-none">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-success text-white" style="width:38px;height:38px;"><i class="bi bi-telephone-fill"></i></div>
+          <div class="d-none d-xl-block lh-1">
+            <small class="text-muted" style="font-size:.72rem;">Call Us Now</small>
+            <strong class="d-block" style="font-size:.92rem;color:var(--dark);">+91 9923553235</strong>
+          </div>
+        </a>
+        <a href="contact.html" class="btn-main nav-cta ms-2">Book Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== INNER HEADER HERO BANNER ========== -->
+<section class="page-header">
+  <div class="container position-relative z-1">
+    <h1>Contact Our Team</h1>
+    <div class="breadcrumb-wrap">
+      <a href="index.html">Home</a> <span>/</span> <span>Contact Us</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT PAGE WRAPPER ========== -->
+<div class="contact-page-wrap">
+  <div class="container">
+    
+    <!-- Info Blocks Row -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="contact-info-card">
+          <div class="contact-icon-box"><i class="bi bi-geo-alt-fill"></i></div>
+          <div>
+            <h5>Registered Office</h5>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-info-card">
+          <div class="contact-icon-box"><i class="bi bi-telephone-fill"></i></div>
+          <div>
+            <h5>Call Operations</h5>
+            <p class="mb-1"><a href="tel:+919923553235">+91 99235 53235</a></p>
+            <p><a href="tel:+91 99235 53235">Helpline: +91 99235 53235</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-info-card">
+          <div class="contact-icon-box"><i class="bi bi-envelope-fill"></i></div>
+          <div>
+            <h5>Email Queries</h5>
+            <p class="mb-1"><a href="mailto:info@denprasolutions.com">info@denprasolutions.com</a></p>
+            <p><a href="mailto:sales@denprasolutions.com">sales@denprasolutions.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form & Intro Split Grid -->
+    <div class="row g-5 align-items-stretch">
+      <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-right">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title mb-2">Connect With Denpra Solutions Technicians Today</h2>
+        <div class="divider-green"></div>
+        <p class="text-muted mb-4" style="line-height: 1.75; font-size: 0.95rem;">
+          Our localized routing center syncs independent residential spaces and commercial environments across Mumbai, Navi Mumbai, and Thane directly with certified biological mitigation personnel. Complete the form inputs to secure your assessment date promptly.
+        </p>
+        
+        <div class="d-flex gap-3 align-items-center border-top pt-4">
+          <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;"><i class="bi bi-clock-history fs-5"></i></div>
+          <div>
+            <span class="text-uppercase fw-bold text-muted small d-block" style="font-size: 0.72rem; letter-spacing: 0.5px;">Support Schedule</span>
+            <strong class="text-dark" style="font-size: 0.95rem;">Mon–Sat: 8:00 AM – 7:00 PM</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="form-container">
+          <h3 class="fw-bold mb-4 h4 text-dark border-b pb-2">Request A Quick Callback</h3>
+          <form action="#" method="POST" class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name*</label>
+              <input type="text" class="form-control" placeholder="e.g. Rahul Mehta" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Mobile Number*</label>
+              <input type="tel" class="form-control" placeholder="e.g. +91 99000 00000" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Target Category*</label>
+              <select class="form-select" required>
+                <option value="" selected disabled>Select Core Assignment...</option>
+                <option value="pest">Pest Control Services</option>
+                <option value="cleaning">Deep Cleaning Protocols</option>
+                <option value="bird">Balcony Netting & Safety Grills</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Approx Area (Sq.Ft.)*</label>
+              <input type="number" class="form-control" placeholder="e.g. 750" required />
+            </div>
+            <div class="col-12">
+              <label class="form-label">Brief Inquiry Note</label>
+              <textarea class="form-control" rows="4" placeholder="Detail any active infestation observations or sanitation layout properties here..."></textarea>
+            </div>
+            <div class="col-12 pt-2">
+              <button type="submit" class="btn-main w-100 text-uppercase tracking-wider py-3 font-extrabold" style="font-weight: 800;">Send Call Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== EMBEDDED GOOGLE MAP MATRIX ========== -->
+<div data-aos="fade-up">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.234851242099!2d72.8595999!3d19.2503287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b11d88a2efbb%3A0xc6c764c9f1a07011!2sOrchid%20Plaza%2C%20Swami%20Vivekanand%20Rd%2C%20Dahisar%20East%2C%20Mumbai%2C%20Maharashtra%20400068!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" class="map-container" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <div class="brand-text d-flex align-items-center gap-2"> DENPRA<span>SOLUTIONS</span></div>
+            <p>Your trusted partner in pest control and fumigation services since 2009. Protecting homes and businesses across India with safe, effective and guaranteed solutions.</p>
+            <div class="footer-socials">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Our Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h6>Services</h6>
+          <ul class="footer-links">
+            <li><a href="generalpastcontrol.html">General Pest Control</a></li>
+            <li><a href="ratguardpastecontrol.html">Rat Guard Installation</a></li>
+            <li><a href="birdnettingpastecontrol.html">Bird Netting Wire Setup</a></li>
+            <li><a href="termitepastecontrol.html">Termite Post-Treatment</a></li>
+            <li><a href="preconstructionpastecontrol.html">Pre-Construction Termite Management</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6>Contact Info</h6>
+          <ul class="footer-contact list-unstyled">
+            <li><i class="bi bi-geo-alt-fill"></i> Mumbai | Navi-Mumbai | Thane</li>
+            <li><i class="bi bi-telephone-fill"></i><a href="tel:+919923553235" class="text-decoration-none" style="color:#aaa;">+91 9923553235</a></li>
+            <li><i class="bi bi-envelope-fill"></i><a href="mailto:info@bugfree.com" class="text-decoration-none" style="color:#aaa;"></a></li>
+            <li><i class="bi bi-clock-fill"></i>Mon–Sat: 8:00 AM – 7:00 PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center">
+    <div class="container">
+      <span>© 2026 Denpra Solutions PVT.LTD. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" title="Back to Top"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // AOS Initialization
+  AOS.init({ duration: 700, once: true, offset: 60 });
+
+  // Navbar dynamic shadow modifier on scroll run
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,.14)';
+    } else {
+      navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,.08)';
+    }
+  });
+
+  // Back to top scroll execution triggers
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('show', window.scrollY > 300);
+  });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>
